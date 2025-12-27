@@ -1,9 +1,20 @@
-use std::net::TcpListener;
-use zero2prod::run;
+use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer, Responder};
+
+
 
 #[tokio::main]
-async fn main() -> std::io::Result<()> {
-    // We bind to port 8000 for actual local running
-    let listener = TcpListener::bind("127.0.0.1:8000")?;
-    run(listener)?.await
+async fn main() -> Result<(), std::io::Error> {
+    HttpServer::new(|| {
+        App::new()
+            .route("/health_check", web::get().to(health_check))
+
+    })
+     .bind("127.0.0.1:8000")?
+     .run()
+        .await
+
+}
+
+async fn health_check() -> impl Responder {
+HttpResponse::Ok()
 }
