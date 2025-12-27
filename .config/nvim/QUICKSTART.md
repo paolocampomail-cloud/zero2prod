@@ -2,6 +2,16 @@
 
 Welcome to your new Neovim configuration for Rust and Assembly x86_64 development!
 
+## Getting the Configuration
+
+First, download the configuration from the repository:
+
+```bash
+# Clone the repository
+git clone https://github.com/paolocampomail-cloud/zero2prod.git
+cd zero2prod
+```
+
 ## Installation (3 Simple Steps)
 
 ### 1. Run the installer

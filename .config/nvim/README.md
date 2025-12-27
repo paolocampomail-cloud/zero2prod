@@ -262,6 +262,18 @@ sudo dnf install cmake
 
 ## Installation
 
+### Step 0: Get the Configuration
+
+First, download the Neovim configuration from the repository:
+
+```bash
+# Clone the repository
+git clone https://github.com/paolocampomail-cloud/zero2prod.git
+cd zero2prod
+```
+
+Now you have the configuration files in `zero2prod/.config/nvim/`.
+
 ### Step 1: Backup Your Existing Neovim Configuration
 
 If you have an existing Neovim configuration, it's important to back it up before installing this new configuration.
@@ -314,23 +326,23 @@ echo "✓ Backup complete! Restore with: mv ~/.config/nvim.bak ~/.config/nvim"
 
 ### Step 2: Install This Configuration
 
-#### Method 1: Using Git Clone (from repository)
+Now that you have the repository cloned (from Step 0), choose one of these installation methods:
+
+#### Method 1: Automated Installation (Recommended)
 ```bash
-# Clone the repository
-cd /tmp
-git clone https://github.com/paolocampomail-cloud/zero2prod.git
-
-# Copy the Neovim configuration to your config directory
-cp -r zero2prod/.config/nvim ~/.config/nvim
-
-echo "✓ Configuration files copied successfully!"
+# From the zero2prod directory
+cd .config/nvim
+./install.sh
 ```
 
-#### Method 2: Manual Copy (if you already have the repo)
-```bash
-# If you already have the repository cloned
-cd /path/to/zero2prod
+The installer will automatically:
+- Check prerequisites
+- Backup your existing configuration
+- Install the new configuration
+- Show next steps
 
+#### Method 2: Manual Installation
+```bash
 # Copy the configuration to your Neovim config directory
 cp -r .config/nvim ~/.config/nvim
 

@@ -3,6 +3,7 @@
 This guide provides detailed instructions for installing the Neovim configuration, including how to backup your existing configuration.
 
 ## Table of Contents
+0. [Getting the Configuration](#getting-the-configuration)
 1. [Prerequisites](#prerequisites)
 2. [Backup Existing Configuration](#backup-existing-configuration)
 3. [Installation Methods](#installation-methods)
@@ -11,6 +12,22 @@ This guide provides detailed instructions for installing the Neovim configuratio
 6. [Verification](#verification)
 7. [Troubleshooting](#troubleshooting)
 8. [Restoration](#restoration)
+
+---
+
+## Getting the Configuration
+
+Before you can install the Neovim configuration, you need to download it from the repository.
+
+```bash
+# Clone the repository
+git clone https://github.com/paolocampomail-cloud/zero2prod.git
+cd zero2prod
+```
+
+Now you have the configuration files in `zero2prod/.config/nvim/`.
+
+**Note**: All subsequent commands in this guide assume you're in the `zero2prod` directory.
 
 ---
 
@@ -150,26 +167,18 @@ The script will:
 
 ### Method 2: Manual Installation
 
-#### Step 1: Clone or Copy Configuration
-```bash
-# Option A: Clone from repository
-git clone https://github.com/paolocampomail-cloud/zero2prod.git /tmp/zero2prod
-cd /tmp/zero2prod
+Since you already cloned the repository in the "Getting the Configuration" step, you can manually copy the files:
 
-# Option B: If you already have the repository
-cd /path/to/zero2prod
-```
-
-#### Step 2: Copy to Config Directory
+#### Step 1: Copy to Config Directory
 ```bash
-# Copy the configuration
+# From the zero2prod directory
 cp -r .config/nvim ~/.config/nvim
 
 # Verify the copy
 ls -la ~/.config/nvim
 ```
 
-#### Step 3: Verify Structure
+#### Step 2: Verify Structure
 ```bash
 # Check that all files are present
 tree ~/.config/nvim -L 2
